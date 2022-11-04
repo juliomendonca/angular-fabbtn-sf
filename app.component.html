@@ -1,0 +1,42 @@
+<div class="control-section">
+  <div class="fab-appearence-container">
+    <button
+      ejs-fab
+      iconCss="e-icons e-table-of-content"
+      content='<span class="text-container"><span class="text-internal">Legenda</span></span>'
+      position="BottomRight"
+      cssClass="e-info fab-hover"
+      title="Legenda"
+    ></button>
+  </div>
+</div>
+
+
+<ng-template #popupTemplate>
+<div class="popuptempContent">
+  <div class="speeddial-form">
+    <div class="head">
+      <div class="textEle">Legenda</div>
+      <div class="iconEle">
+        <span
+          class="speeddial-icons speeddial-icon-close closeicon"
+          (click)="closeClick()"
+        ></span>
+      </div>
+    </div>
+    <div class="content">
+      <div fxLayout="row" fxLayoutGap="5px">
+        <div *ngFor="let item of items; let i = index">
+          <span
+            class="icon {{ item.iconCss }}"
+            style="padding:3px"
+          ></span>
+          <span class="text">{{ item.text }}</span>
+        </div>
+
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+</ng-template>
